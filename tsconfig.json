@@ -30,6 +30,7 @@
         "src/client/index.tsx",
         "src/client/socket.ts",
         "src/client/styles/index.styl",
+        "src/server/game.ts",
         "src/server/index.tsx"
     ],
     "compileOnSave": false,

@@ -1,13 +1,14 @@
 {
-  "name": "Game on websockets",
+  "name": "websockets-game",
   "version": "1.0.0",
   "description": "Game on websockets",
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
+    "watch": "webpack --watch",
     "prepare": "npm i",
     "build": "cross-env NODE_ENV=production webpack -p",
-    "start:dev": "webpack-dev-server --hot --inline"
+    "start": "webpack && nodemon build/server.js"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "express": "^4.14.0",
     "html-webpack-plugin": "^2.25.0",
     "isomorphic-style-loader": "^1.1.0",
+    "nodemon": "^1.11.0",
     "normalize-css": "^2.3.1",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
