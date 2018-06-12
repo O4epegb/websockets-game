@@ -2,54 +2,9 @@
     "compilerOptions": {
         "target": "es5",
         "jsx": "react",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "noEmit": true,
         "importHelpers": true,
-        "lib": [
-            "dom",
-            "es2015"
-        ]
-    },
-    "filesGlob": [
-        "node_modules/@types/**/*.d.ts",
-        "src/**/*"
-    ],
-    "files": [
-        "node_modules/@types/express-serve-static-core/index.d.ts",
-        "node_modules/@types/express/index.d.ts",
-        "node_modules/@types/mime/index.d.ts",
-        "node_modules/@types/node/index.d.ts",
-        "node_modules/@types/react-dom/index.d.ts",
-        "node_modules/@types/react-dom/server.d.ts",
-        "node_modules/@types/react/index.d.ts",
-        "node_modules/@types/serve-static/index.d.ts",
-        "node_modules/@types/socket.io-client/index.d.ts",
-        "node_modules/@types/socket.io/index.d.ts",
-        "src/client/components/App.tsx",
-        "src/client/index.tsx",
-        "src/client/socket.ts",
-        "src/client/styles/index.styl",
-        "src/server/game.ts",
-        "src/server/index.tsx"
-    ],
-    "compileOnSave": false,
-    "formatCodeOptions": {
-        "indentSize": 4,
-        "tabSize": 4,
-        "newLineCharacter": "\r\n",
-        "convertTabsToSpaces": true,
-        "insertSpaceAfterCommaDelimiter": true,
-        "insertSpaceAfterSemicolonInForStatements": true,
-        "insertSpaceBeforeAndAfterBinaryOperators": true,
-        "insertSpaceAfterKeywordsInControlFlowStatements": true,
-        "insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
-        "insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
-        "placeOpenBraceOnNewLineForFunctions": false,
-        "placeOpenBraceOnNewLineForControlBlocks": false
-    },
-    "atom": {
-        "rewriteTsconfig": true,
-        "formatOnSave": true
+        "experimentalDecorators": true,
+        "noUnusedLocals": true,
+        "lib": ["dom", "es2015"]
     }
 }

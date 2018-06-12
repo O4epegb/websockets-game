@@ -1,30 +1,38 @@
 import * as React from 'react';
 import { socket } from '../socket';
 
-
 export class App extends React.Component<{}, {}> {
     canvas: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D;
 
-    constructor() {
-        super();
-        this.state = {
-
-        };
+    constructor(props) {
+        super(props);
+        this.state = {};
     }
 
     componentDidMount() {
         this.ctx.font = '30px Arial';
-        socket.on('newPositions', (data) => {
+        socket.on('newPositions', data => {
             this.ctx.clearRect(0, 0, 500, 500);
-            for (var i = 0; i < data.player.length; i++)
-                this.ctx.fillText(data.player[i].number, data.player[i].x, data.player[i].y);
+            for (let i = 0; i < data.player.length; i++) {
+                this.ctx.fillText(
+                    data.player[i].number,
+                    data.player[i].x,
+                    data.player[i].y
+                );
+            }
 
-            for (var i = 0; i < data.bullet.length; i++)
-                this.ctx.fillRect(data.bullet[i].x - 5, data.bullet[i].y - 5, 10, 10);
+            for (let i = 0; i < data.bullet.length; i++) {
+                this.ctx.fillRect(
+                    data.bullet[i].x - 5,
+                    data.bullet[i].y - 5,
+                    10,
+                    10
+                );
+            }
         });
 
-        document.onkeydown = function(event) {
+        document.onkeydown = event => {
             if (event.keyCode === 68) {
                 socket.emit('keyPress', { inputId: 'right', state: true });
             } else if (event.keyCode === 83) {
@@ -36,7 +44,7 @@ export class App extends React.Component<{}, {}> {
             }
         };
 
-        document.onkeyup = function(event) {
+        document.onkeyup = event => {
             if (event.keyCode === 68) {
                 socket.emit('keyPress', { inputId: 'right', state: false });
             } else if (event.keyCode === 83) {
@@ -52,7 +60,13 @@ export class App extends React.Component<{}, {}> {
     render() {
         return (
             <div>
-                <canvas ref={node => (this.canvas = node, this.ctx = node.getContext('2d'))} width="500" height="500" />
+                <canvas
+                    ref={node => (
+                        (this.canvas = node), (this.ctx = node.getContext('2d'))
+                    )}
+                    width="500"
+                    height="500"
+                />
             </div>
         );
     }

@@ -1,38 +1,21 @@
 {
-  "rules": {
-    "class-name": true,
-    "comment-format": [true,
-      "check-space"
-    ],
-    "indent": [true,
-      "spaces"
-    ],
-    "one-line": [true,
-      "check-open-brace",
-      "check-whitespace"
-    ],
-    "quotemark": [true,
-      "single", "jsx-double"
-    ],
-    "semicolon": true,
-    "whitespace": [true,
-      "check-branch",
-      "check-operator",
-      "check-separator",
-      "check-type",
-      "check-module"
-    ],
-    "typedef-whitespace": [true, {
-      "call-signature": "nospace",
-      "index-signature": "nospace",
-      "parameter": "nospace",
-      "property-declaration": "nospace",
-      "variable-declaration": "nospace"
-    }],
-    "no-internal-module": true,
-    "no-trailing-whitespace": true,
-    "no-inferrable-types": true,
-    "no-unused-variable": true,
-    "no-debugger": true
-  }
+    "extends": "tslint:recommended",
+    "rules": {
+        "quotemark": [true, "single", "jsx-double", "avoid-escape"],
+        "arrow-parens": [true, "ban-single-arg-parens"],
+        "semicolon": [true, "always", "ignore-bound-class-methods"],
+        "ordered-imports": false,
+        "max-line-length": false,
+        "array-type": false,
+        "trailing-comma": false,
+        "no-console": false,
+        "interface-name": false,
+        "object-literal-sort-keys": false,
+        "no-bitwise": false,
+        "member-access": false,
+        "member-ordering": false,
+        "variable-name": false,
+        "max-classes-per-file": false,
+        "prefer-for-of": false
+    }
 }
